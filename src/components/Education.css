@@ -1,0 +1,463 @@
+.education {
+  padding: 120px 0;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.current-work,
+.education-section {
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #ffffff;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Current Work Section */
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.work-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(102, 126, 234, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.work-card:hover::before {
+  opacity: 1;
+}
+
+.work-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.work-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.work-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #b0b0b0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Education Section */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 15px 60px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+  position: relative;
+  overflow: visible;
+  min-height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.education-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--logo-color, #667eea) 0%, transparent 70%);
+  opacity: 0.05;
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--logo-color, #667eea);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.education-card:hover::before {
+  opacity: 0.1;
+}
+
+.education-content {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.institution-logo {
+  width: 40px;
+  height: 40px;
+  background: var(--logo-color, #667eea);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.education-info {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.institution-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.0;
+}
+
+.degree-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--logo-color, #667eea);
+  margin-bottom: 2px;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.specialization {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.education-period {
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 500;
+  text-align: right;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes educationBubbleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-50px) translateX(30px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-100px) translateX(-20px) scale(0.9);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-80px) translateX(40px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Education Bubbles Container */
+.education-bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.education-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.15));
+  animation: educationBubbleFloat ease-in-out infinite;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.education-bubble:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 15%;
+  left: 8%;
+  animation-duration: 16s;
+  animation-delay: 0s;
+}
+
+.education-bubble:nth-child(2) {
+  width: 70px;
+  height: 70px;
+  top: 25%;
+  right: 12%;
+  animation-duration: 19s;
+  animation-delay: 2s;
+}
+
+.education-bubble:nth-child(3) {
+  width: 55px;
+  height: 55px;
+  top: 65%;
+  left: 15%;
+  animation-duration: 13s;
+  animation-delay: 4s;
+}
+
+.education-bubble:nth-child(4) {
+  width: 85px;
+  height: 85px;
+  top: 75%;
+  right: 18%;
+  animation-duration: 21s;
+  animation-delay: 1s;
+}
+
+.education-bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  top: 35%;
+  left: 55%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+.education-bubble:nth-child(6) {
+  width: 75px;
+  height: 75px;
+  top: 20%;
+  left: 85%;
+  animation-duration: 17s;
+  animation-delay: 5s;
+}
+
+.education-bubble:nth-child(7) {
+  width: 60px;
+  height: 60px;
+  top: 80%;
+  left: 35%;
+  animation-duration: 14s;
+  animation-delay: 6s;
+}
+
+.education-bubble:nth-child(8) {
+  width: 45px;
+  height: 45px;
+  top: 55%;
+  right: 8%;
+  animation-duration: 18s;
+  animation-delay: 8s;
+}
+
+.education-bubble:nth-child(9) {
+  width: 95px;
+  height: 95px;
+  top: 45%;
+  left: 25%;
+  animation-duration: 20s;
+  animation-delay: 7s;
+}
+
+.education-bubble:nth-child(10) {
+  width: 30px;
+  height: 30px;
+  top: 70%;
+  right: 45%;
+  animation-duration: 12s;
+  animation-delay: 9s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .education-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 80px 0;
+  }
+  
+  .education-content {
+    gap: 50px;
+  }
+  
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .work-card {
+    padding: 20px;
+  }
+  
+  .work-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  .work-title {
+    font-size: 18px;
+  }
+  
+  .work-description {
+    font-size: 15px;
+  }
+  
+  .education-card {
+    padding: 25px 20px;
+  }
+  
+  .education-header {
+    gap: 15px;
+  }
+  
+  .institution-logo {
+    width: 45px;
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .institution-name {
+    font-size: 18px;
+  }
+  
+  .degree-name {
+    font-size: 15px;
+  }
+  
+  .specialization {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-card {
+    padding: 18px 15px;
+  }
+  
+  .education-card {
+    padding: 20px 15px;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .education-period {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .institution-logo {
+    align-self: center;
+  }
+}
