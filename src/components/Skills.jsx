@@ -3,12 +3,11 @@ import './Skills.css';
 
 const Skills = () => {
   const programmingSkills = [
-    { name: "Java", level: 85 },
-    { name: "JavaScript", level: 88 },
-    { name: "C", level: 95 },
-    { name: "PHP", level: 80 },
-    { name: "Python", level: 20 },
-   
+    "Java",
+    "JavaScript", 
+    "C",
+    "PHP",
+    "Python",
   ];
 
   const frameworks = [
@@ -68,20 +67,9 @@ const Skills = () => {
                 <p className="category-subtitle">Core Languages</p>
               </div>
             </div>
-            <div className="skills-list">
+            <div className="tech-tags">
               {programmingSkills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
+                <span key={index} className="tech-tag programming">{skill}</span>
               ))}
             </div>
           </div>

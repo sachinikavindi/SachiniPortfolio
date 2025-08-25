@@ -79,9 +79,9 @@ const Hero = () => {
               <br />
               <span className="name-gradient">Kavindya</span>
             </h1>
-            <h2 className="hero-subtitle">Full-Stack Software Engineer</h2>
+            <h2 className="hero-subtitle">SOFTWARE ENGINEERING INTERN</h2>
             <p className="hero-description">
-              Self-motivated engineer passionate about building scalable web
+              Self-motivated IT undergraduate passionate about building scalable web
               and AI-driven solutions. Currently contributing to innovative
               projects at Masgolla Tea Estate and   Luvee, with expertise in React,
               Node.js, MongoDB, and Firebase.
