@@ -73,7 +73,7 @@ const Skills = () => {
               ))}
             </div>
           </div>
-
+ 
           {/* Frameworks */}
           <div className="skill-category">
             <div className="category-header">

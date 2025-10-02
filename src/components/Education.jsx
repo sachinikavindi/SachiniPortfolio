@@ -64,10 +64,10 @@ const Education = () => {
             <div className="education-grid">
               {education.map((edu, index) => (
                 <div key={index} className="education-card">
-                  <div className="institution-logo" style={{'--logo-color': edu.color}}>
-                    {edu.logo}
-                  </div>
                   <div className="education-content">
+                    <div className="institution-logo" style={{'--logo-color': edu.color}}>
+                      {edu.logo}
+                    </div>
                     <div className="education-info">
                       <h3 className="institution-name">{edu.institution}</h3>
                       <h4 className="degree-name">{edu.degree}</h4>

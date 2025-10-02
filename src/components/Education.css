@@ -112,18 +112,21 @@
 }
 
 .education-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  padding: 15px 60px;
+  padding: 20px 25px;
   transition: all 0.3s ease;
   animation: fadeInUp 0.8s ease-out 0.3s both;
   position: relative;
   overflow: visible;
-  min-height: 80px;
+  min-height: 120px;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .education-card:nth-child(2) {
@@ -154,72 +157,69 @@
 
 .education-content {
   display: flex;
-  align-items: center;
-  gap: 0px;
+  flex-direction: column;
+  gap: 8px;
   width: 100%;
-  margin-left: 50px;
+  position: relative;
 }
 
 .institution-logo {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: var(--logo-color, #667eea);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 2;
+  margin-bottom: 12px;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .education-info {
   flex: 1;
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .institution-name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.0;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .degree-name {
   font-size: 16px;
   font-weight: 600;
   color: var(--logo-color, #667eea);
-  margin-bottom: 2px;
-  line-height: 1.1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 0;
+  line-height: 1.3;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .specialization {
   font-size: 14px;
-  color: #9ca3af;
-  line-height: 1.5;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .education-period {
   font-size: 14px;
   color: #667eea;
-  font-weight: 500;
-  text-align: right;
-  position: relative;
-  z-index: 2;
-  white-space: nowrap;
-  margin-left: auto;
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Animation */
@@ -368,10 +368,26 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .education-card {
+    padding: 20px 25px;
+  }
+
+  .education-content {
+    gap: 15px;
+  }
+}
+
 @media (max-width: 1024px) {
   .education-content {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 5px;
   }
 }
 
@@ -379,85 +395,188 @@
   .education {
     padding: 80px 0;
   }
-  
+
   .education-content {
     gap: 50px;
   }
-  
+
   .education-grid {
-    grid-template-columns: 1fr;
     gap: 25px;
+    padding: 0;
   }
-  
+
   .section-title {
     margin-bottom: 40px;
+    font-size: clamp(2rem, 6vw, 2.5rem);
   }
-  
+
   .work-card {
     padding: 20px;
   }
-  
+
   .work-icon {
     font-size: 32px;
     margin-bottom: 12px;
   }
-  
+
   .work-title {
     font-size: 18px;
   }
-  
+
   .work-description {
     font-size: 15px;
   }
-  
+
   .education-card {
-    padding: 25px 20px;
+    padding: 18px 16px;
+    min-height: 110px;
   }
-  
-  .education-header {
-    gap: 15px;
+
+  .education-content {
+    gap: 6px;
   }
-  
+
   .institution-logo {
     width: 45px;
     height: 45px;
-    font-size: 14px;
+    font-size: 15px;
+    margin-bottom: 10px;
   }
-  
+
   .institution-name {
     font-size: 18px;
+    line-height: 1.2;
   }
-  
+
   .degree-name {
     font-size: 15px;
+    line-height: 1.3;
   }
-  
+
   .specialization {
     font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .education-period {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-card {
+    padding: 16px 12px;
+    margin-bottom: 15px;
+    min-height: 100px;
+  }
+
+  .education-content {
+    gap: 5px;
+  }
+
+  .institution-logo {
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .institution-name {
+    font-size: 17px;
+  }
+
+  .degree-name {
+    font-size: 14px;
+  }
+
+  .specialization {
+    font-size: 12px;
+  }
+
+  .education-period {
+    font-size: 12px;
+    margin-top: 5px;
   }
 }
 
 @media (max-width: 480px) {
-  .work-card {
-    padding: 18px 15px;
+  .education {
+    padding: 60px 0;
   }
-  
+
   .education-card {
-    padding: 20px 15px;
+    padding: 14px 10px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    min-height: 95px;
   }
-  
-  .education-header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+
+  .education-content {
+    gap: 6px;
   }
-  
-  .education-period {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
+
   .institution-logo {
-    align-self: center;
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .education-info {
+    gap: 3px;
+  }
+
+  .institution-name {
+    font-size: 15px;
+  }
+
+  .degree-name {
+    font-size: 13px;
+  }
+
+  .specialization {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .education-period {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .education-card {
+    padding: 12px 8px;
+    min-height: 90px;
+  }
+
+  .education-content {
+    gap: 4px;
+  }
+
+  .institution-logo {
+    width: 35px;
+    height: 35px;
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .institution-name {
+    font-size: 14px;
+  }
+
+  .degree-name {
+    font-size: 12px;
+  }
+
+  .specialization {
+    font-size: 10px;
+  }
+
+  .education-period {
+    font-size: 10px;
+    margin-top: 4px;
   }
 }
